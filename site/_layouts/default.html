@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{% seo %}
+    {% seo %}
+    <link href="/assets/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
     <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
@@ -22,9 +24,9 @@
       <div id="header">
         <nav>
           <ul>
-            <li class="fork"><a href="https://about.mastodon.africa" target="_blank">Homepage</a></li>
-            <li class="downloads"><a href="https://github.com/amberstone-digital/about.mastodon.africa" target="_blank">Github Repo &raquo;</a></li>
-            <li class="downloads"><a href="https://mastodon.africa/" target="_blank">Go to instance &raquo;</a></li>
+            <!--<li class="fork"><a href="https://about.mastodon.africa" target="_blank">Homepage</a></li>-->
+            <li class="downloads"><a href="https://github.com/amberstone-digital/discover.mastodon.africa" target="_blank">Github Repo &raquo;</a></li>
+            <li class="downloads"><a href="https://mastodon.africa/" target="_blank">mastodon.africa &raquo;</a></li>
           </ul>
         </nav>
       </div>
@@ -33,11 +35,11 @@
 
       <section>
         <div id="title">
-          <h1>Welcome to mastodon.africa!</h1>
-          <p>A South African-hosted instance of the popular ActivityPub-based decentralized social networking platform.</p>
+          <h1>Discover Mastodon Servers</h1>
+          <p>A curated index of African-based Mastodon instances.</p>
           <hr>
           <span class="credits left">&nbsp;</span>
-          <span class="credits right">A <a href="/about">protocol7</a> initiative</span>
+          <span class="credits right">A <a href="https://about.mastodon.africa/about">protocol7</a> initiative</span>
         </div>
 
         {{ content }}
