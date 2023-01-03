@@ -21,24 +21,62 @@ title: Welcome!
 
 </style>
 
+<h1 class="mb-2">Instances hosted inside Africa</h1>
+
+<p>These instances are physically located within the borders of an African country.</p>
+
 <div class="row">
-{% for post in site.posts %}
-<div class="col-6">
+{% for post in site.posts reversed %}
+{% if post.continent == "africa" %}
+<div class="col-4">
   <div class="card">
     <div class="card-header p-0">
-      <h3 class="card-title m-2" style="text-indent: 4px;">{{ post.title }}</h3>
+      <h3 class="card-title m-2" style="text-indent: 4px;"><a href="https://{{ post.title }}" target="_blank">{{ post.title }} &raquo;</a></h3>
     </div>
     <div class="card-body p-0">
-      <img src="/assets/instance-banners/{{ post.banner }}">
-      <p class="instance-description">Mastodon.Africa is run by South Africans, for South Africans.</p>
+      <a href="https://{{ post.title }}" target="_blank"><img src="{{ post.banner }}"></a>
+      <p class="instance-description">{{ post.description }}</p>
     </div>
     <div class="card-footer p-0">
       <div class="d-flex justify-content-between">
         <div class="p-2"><img src="/assets/flags/4x3/{{ post.country }}.svg" class="country-flag"></div>
-        <div class="p-2"><span class="instance-stats">{{ post.users }} active users</span></div>
+        <div class="p-2"><span class="instance-stats">{{ post.statuses }} posts from {{ post.users }} users</span></div>
       </div>
     </div>
   </div>
 </div>
+{% endif %}
+{% endfor %}
+</div>
+
+<p>&nbsp;</p>
+
+<hr>
+
+<h1 class="mb-2">Instances hosted outside Africa</h1>
+
+<p>These instances are physically located outside of Africa, but are owned and operated by African instance administrators.</p>
+
+<div class="row">
+{% for post in site.posts reversed %}
+{% if post.continent != "africa" %}
+<div class="col-4">
+  <div class="card">
+    <div class="card-header p-0">
+      <h3 class="card-title m-2" style="text-indent: 4px;"><a href="https://{{ post.title }}" target="_blank">{{ post.title }} &raquo;</a></h3>
+    </div>
+    <div class="card-body p-0">
+      <a href="https://{{ post.title }}" target="_blank"><img src="{{ post.banner }}"></a>
+      <p class="instance-description">{{ post.description }}</p>
+    </div>
+    <div class="card-footer p-0">
+      <div class="d-flex justify-content-between">
+        <div class="p-2"><img src="/assets/flags/4x3/{{ post.country }}.svg" class="country-flag"></div>
+        <div class="p-2"><span class="instance-stats">{{ post.statuses }} posts from {{ post.users }} users</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 {% endfor %}
 </div>
