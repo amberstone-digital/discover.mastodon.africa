@@ -3,6 +3,22 @@
  * Supporting functions for the instance crawler
  */
 
+ function getCountryNameForDomain(string $domain) : string
+ {
+     $reader = new \GeoIp2\Database\Reader('/workspaces/discover.mastodon.africa/crawler/GeoLite2-City.mmdb');
+ 
+     try
+     {
+         $location = $reader->city(gethostbyname($domain));
+         if (trim($location->country->name) == "") return "Unknown";
+         return $location->country->name;
+     }
+     catch(\Exception $ex)
+     {
+         return "xx"; // "unknown"
+     }
+ }
+
  function getCountryForDomain(string $domain) : string
  {
      $reader = new \GeoIp2\Database\Reader('/workspaces/discover.mastodon.africa/crawler/GeoLite2-City.mmdb');
@@ -50,12 +66,14 @@ function registerInstance(int $n, string $filepath, array $options) : int|bool
     $sec = str_pad($n, 2, "0", STR_PAD_LEFT);
 
     $description = trim(str_replace(array("\r", "\n"), ' ', $options['short_description']));
+    $description = str_replace("'", "", $description);
 
     return file_put_contents($filepath, "---
 layout: server
 title:  {$options['domain']}
 date:   2023-01-03 00:00:{$sec} +0000
 country: {$options['country']}
+country_name: {$options['country_name']}
 continent: {$options['continent']}
 description: {$description}
 banner: {$options['thumbnail']}

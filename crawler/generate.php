@@ -38,6 +38,7 @@ foreach($instances as $domain)
     {
         // We could reach the instance API, so create/update a listing for this instance
         $country = getCountryForDomain($domain);
+        $country_name = getCountryNameForDomain($domain);
         $continent = getContinentForDomain($domain);
 
         $object = json_decode($json);
@@ -48,6 +49,7 @@ foreach($instances as $domain)
                 registerInstance($n, $filepath, [
                     'domain' => $domain,
                     'country' => $country,
+                    'country_name' => $country_name,
                     'continent' => $continent,
                     'short_description' => $object->short_description,
                     'thumbnail' => $object->thumbnail,

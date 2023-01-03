@@ -34,12 +34,12 @@ title: Welcome!
       <h3 class="card-title m-2" style="text-indent: 4px;"><a href="https://{{ post.title }}" target="_blank">{{ post.title }} &raquo;</a></h3>
     </div>
     <div class="card-body p-0">
-      <a href="https://{{ post.title }}" target="_blank"><img src="{{ post.banner }}"></a>
-      <p class="instance-description">{{ post.description }}</p>
+      <a href="https://{{ post.title }}" target="_blank"><div style="background: url('{{ post.banner }}') center center no-repeat; background-size: cover; height: 150px;"></div></a>
+      <p class="instance-description" style="height: 36px; overflow: hidden;">{{ post.description }}</p>
     </div>
     <div class="card-footer p-0">
       <div class="d-flex justify-content-between">
-        <div class="p-2"><img src="/assets/flags/4x3/{{ post.country }}.svg" class="country-flag"></div>
+        <div class="p-2"><img src="/assets/flags/4x3/{{ post.country }}.svg" class="country-flag" title="{{ post.country_name }}"></div>
         <div class="p-2"><span class="instance-stats">{{ post.statuses }} posts from {{ post.users }} users</span></div>
       </div>
     </div>
