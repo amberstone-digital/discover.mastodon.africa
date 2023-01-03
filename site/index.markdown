@@ -27,7 +27,7 @@ title: Welcome!
 
 <div class="row">
 {% for post in site.posts reversed %}
-{% if post.continent == "africa" %}
+{% if post.continent == "af" %}
 <div class="col-4">
   <div class="card mb-4">
     <div class="card-header p-0">
@@ -59,7 +59,7 @@ title: Welcome!
 
 <div class="row">
 {% for post in site.posts reversed %}
-{% if post.continent != "africa" %}
+{% if post.continent != "af" %}
 <div class="col-4">
   <div class="card mb-4">
     <div class="card-header p-0">
