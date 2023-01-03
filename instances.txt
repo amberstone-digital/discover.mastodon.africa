@@ -1,3 +1,7 @@
 mastodon.africa
 convo.casa
 masr.social
+divas.joburg
+mastodon.unsupervised.online
+mastodon.monoceros.co.za
+kiloduck.com

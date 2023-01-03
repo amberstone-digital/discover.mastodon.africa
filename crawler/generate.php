@@ -28,6 +28,8 @@ foreach($instances as $domain)
 
     $ch = curl_init("https://{$domain}/api/v1/instance");
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5); 
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5);
     $json = curl_exec($ch);
     $responseCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
@@ -59,6 +61,10 @@ foreach($instances as $domain)
             }
         }
 
+    }
+    else
+    {
+        echo "Failed to register $domain\n";
     }
 
 }
