@@ -7,5 +7,5 @@ continent: europe
 description: Egyptian Community on Mastodon. مجتمع مصر علي ماستودون.
 banner: https://masr.social/system/site_uploads/files/000/000/001/@1x/646fd776e42137e4.png
 users: 76
-statuses: 1477
+statuses: 1479
 ---

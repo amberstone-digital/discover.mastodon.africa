@@ -29,7 +29,7 @@ title: Welcome!
 {% for post in site.posts reversed %}
 {% if post.continent == "africa" %}
 <div class="col-4">
-  <div class="card">
+  <div class="card mb-4">
     <div class="card-header p-0">
       <h3 class="card-title m-2" style="text-indent: 4px;"><a href="https://{{ post.title }}" target="_blank">{{ post.title }} &raquo;</a></h3>
     </div>
@@ -61,7 +61,7 @@ title: Welcome!
 {% for post in site.posts reversed %}
 {% if post.continent != "africa" %}
 <div class="col-4">
-  <div class="card">
+  <div class="card mb-4">
     <div class="card-header p-0">
       <h3 class="card-title m-2" style="text-indent: 4px;"><a href="https://{{ post.title }}" target="_blank">{{ post.title }} &raquo;</a></h3>
     </div>

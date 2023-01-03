@@ -5,3 +5,5 @@ divas.joburg
 mastodon.unsupervised.online
 mastodon.monoceros.co.za
 kiloduck.com
+spatlo.com
+keuwel.com
