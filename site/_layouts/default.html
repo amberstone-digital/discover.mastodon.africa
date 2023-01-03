@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    {% include style.html %}
+    {% include head-custom.html %}
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <ul>
+            <li class="fork"><a href="https://about.mastodon.africa" target="_blank">Homepage</a></li>
+            <li class="downloads"><a href="https://github.com/amberstone-digital/about.mastodon.africa" target="_blank">Github Repo &raquo;</a></li>
+            <li class="downloads"><a href="https://mastodon.africa/" target="_blank">Go to instance &raquo;</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Welcome to mastodon.africa!</h1>
+          <p>A South African-hosted instance of the popular ActivityPub-based decentralized social networking platform.</p>
+          <hr>
+          <span class="credits left">&nbsp;</span>
+          <span class="credits right">A <a href="/about">protocol7</a> initiative</span>
+        </div>
+
+        {{ content }}
+
+      </section>
+
+    </div>
+  </body>
+</html>
